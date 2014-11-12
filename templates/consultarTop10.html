@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="{{ url_for('static', filename='normalize.min.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+
+        <script src="{{ url_for('static', filename='modernizr-2.6.2-respond-1.1.0.min.js') }}"></script>
+
+	<style>
+	.tftable {font-size:14px;color:#333333;width:100%;border-width: 1px;border-color: #ebab3a;border-collapse: collapse;}
+	.tftable th {font-size:14px;background-color:#e6983b;border-width: 1px;padding: 8px;border-style: solid;border-color: #ebab3a;text-align:center;}
+	.tftable tr {background-color:#ffffff;}
+	.tftable td {font-size:13px;border-width: 1px;padding: 8px;border-style: solid;border-color: #ebab3a;}
+	.tftable tr:hover {background-color:#ffff99;}
+
+	</style>
+    </head>
+    <body>
+
+        <div class="header-container">
+            <header class="wrapper clearfix">
+                <center> <h1 class="title">Articulos</h1> </center>
+		<nav>
+                    <ul>
+			<li><a href="{{url_for('home')}}">Home</a></li>
+			<li><a href="{{url_for('consultar')}}">Consultar</a></li>
+                    </ul>
+                </nav>
+            </header>
+        </div>
+	<center>
+		<p><b>El siguiente es el top 10 de palabras mas usadas en las descripciones de todos los articulos en la BD</b></p>
+		<table class="tftable" border="1" style="width:300px">
+		<tr>
+		  <th>Palabra</th>
+		  <th>Apariciones</th>
+		</tr>
+		{% for articulo in todos %}
+		    <tr>
+			<td>{{ articulo[0] }}</td>
+			<td>{{ articulo[1] }}</td>
+		    </tr>
+		{% endfor %}
+
+		</table>
+	</center>
+
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="{{ url_for('static', filename='jquery-1.11.0.min.js') }}"><\/script>')</script>
+
+        <script src="{{ url_for('static', filename='main.js') }}"></script>
+    </body>
+</html>
