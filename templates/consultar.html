@@ -35,7 +35,7 @@
         </div>
 	<center>
 		<p><b>Los siguientes son todos los articulos en la base de datos:</b></p>
-		<table class="tftable" border="1" style="width:300px">
+		<table class="tftable" border="1" style="width:400px">
 		<tr>
 		  <th>Nombre del Articulo</th>
 		  <th>Descripcion</th>
@@ -47,7 +47,7 @@
 			<td>{{ articulo[0] }}</td>
 			<td>{{ articulo[1] }}</td>
 			<td>{{ articulo[2] }}</td>
-			<td><img src="/static/uploads/{{articulo[3]}}" width="200" height="200" ></img></td>
+			<td><img src="http://192.168.0.133:5984/articulos/{{articulo[3]}}/{{articulo[4]}}" width="200" height="200" ></img></td>
 		    </tr>
 		{% endfor %}
 
