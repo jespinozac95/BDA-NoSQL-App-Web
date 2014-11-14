@@ -35,7 +35,7 @@
         </div>
 	<center>
 		<p><b>El articulo se guardo de la siguiente manera en la base de datos:</b></p>
-		<table class="tftable" border="1" style="width:300px">
+		<table class="tftable" border="1" style="width:400px">
 		<tr>
 		  <th>Nombre del Articulo</th>
 		  <th>Descripcion</th>
@@ -46,11 +46,12 @@
 			{% for t in info %}
 			<td>{{ t }}</td>
 			{% endfor %}
-			<td><img src="/static/uploads/{{imgPath}}" width="200" height="200" ></img></td>
+			<td><img src="http://192.168.0.133:5984/articulos/{{ide}}/{{imgPath}}" width="200" height="200" ></img></td>
 		    </tr>
 
 		</table>
 	</center>
+	
 
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="{{ url_for('static', filename='jquery-1.11.0.min.js') }}"><\/script>')</script>
